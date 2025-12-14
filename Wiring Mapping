@@ -1,0 +1,27 @@
+## 📌 Pin Mapping (ESP32)
+
+### Servo Motors
+| Component | ESP32 Pin | Description |
+|---------|-----------|-------------|
+| Servo 1 | GPIO 26   | Horizontal movement |
+| Servo 2 | GPIO 27   | Trigger / firing action |
+
+> Servos are powered using an external 5V supply (recommended).  
+> **Common GND** between ESP32 and servo power supply is required.
+
+---
+
+### OLED Display (I2C)
+| OLED Pin | ESP32 Pin | Description |
+|---------|-----------|-------------|
+| VCC     | 3.3V      | Power |
+| GND     | GND       | Ground |
+| SDA     | GPIO 21   | I2C Data |
+| SCL     | GPIO 22   | I2C Clock |
+
+---
+
+## ⚠️ Notes
+- Do not power servo motors directly from ESP32 5V pin
+- Use PWM-capable GPIOs for servo control
+- Default I2C address for OLED: `0x3C`
