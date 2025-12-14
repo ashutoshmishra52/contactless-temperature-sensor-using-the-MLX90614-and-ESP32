@@ -1,27 +1,33 @@
-## 📌 Pin Mapping (ESP32)
+## 🌡️ Contactless Temperature Sensor (MLX90614)
 
-### Servo Motors
-| Component | ESP32 Pin | Description |
-|---------|-----------|-------------|
-| Servo 1 | GPIO 26   | Horizontal movement |
-| Servo 2 | GPIO 27   | Trigger / firing action |
-
-> Servos are powered using an external 5V supply (recommended).  
-> **Common GND** between ESP32 and servo power supply is required.
+This project also includes a **contactless temperature sensor (MLX90614)** to measure temperature without physical contact.  
+The sensor communicates with the ESP32 using the **I2C protocol** and displays readings on the OLED.
 
 ---
 
-### OLED Display (I2C)
-| OLED Pin | ESP32 Pin | Description |
-|---------|-----------|-------------|
-| VCC     | 3.3V      | Power |
-| GND     | GND       | Ground |
-| SDA     | GPIO 21   | I2C Data |
-| SCL     | GPIO 22   | I2C Clock |
+## 📌 Pin Mapping – MLX90614 (I2C)
+
+| MLX90614 Pin | ESP32 Pin | Description |
+|--------------|-----------|-------------|
+| VIN / VCC    | 3.3V      | Power supply |
+| GND          | GND       | Ground |
+| SDA          | GPIO 21   | I2C Data |
+| SCL          | GPIO 22   | I2C Clock |
+
+> MLX90614 shares the same I2C bus with the OLED display.
+
+---
+
+## ⚙️ Working Principle
+- The MLX90614 senses **infrared radiation** from an object
+- It calculates temperature without touching the object
+- ESP32 reads the temperature via I2C
+- The OLED displays real-time temperature values
+- An alert (LED/trigger) can be activated if temperature crosses a set threshold
 
 ---
 
 ## ⚠️ Notes
-- Do not power servo motors directly from ESP32 5V pin
-- Use PWM-capable GPIOs for servo control
-- Default I2C address for OLED: `0x3C`
+- Operating voltage: **3.3V (safe for ESP32)**
+- Default I2C address: `0x5A`
+- Keep sensor steady for accurate readings
