@@ -118,10 +118,11 @@ Default I2C Addresses:
 - Contactless temperature monitoring
 
 ---
-<iframe width="440" height="782" src="https://www.youtube.com/embed/mUNbvsTJ5Sk" title="My DIY contactless temperature sensor 🔥MLX90614 + ESP32 + OLED Display = Accurate #tempreture" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## 📌 Notes
 
 - Do not power servo motors directly from ESP32 5V pin
 - Always use PWM-capable GPIOs for servos
 - Ensure common ground between all components
 
+https://www.youtube.com/shorts/mUNbvsTJ5Sk?feature=share
